@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页</title>
+    <link href="../Css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+    <link href="../Css/animate.css" rel="stylesheet">
+    <link href="../Css/style.css" rel="stylesheet">
+    <link href="../Css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script>
+        function SelectWarehouse() {
+            layer.open({
+                type: 2,
+                title: '选择仓库',
+                maxmin: true,
+                zIndex: 1000,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '500px'],
+                content: 'SelectWarehouse.html',
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    var data = $(layero).find("iframe")[0].contentWindow.CheckSelect();
+                    if (data != false) {
+                        var str = data.split(',');
+                        $("#txtWareHouse").val(str);
+                        layer.close(index);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="alert alert-success whj_location"><span class="c6">当前位置：自治区救灾物资信息管理系统 &nbsp > &nbsp</span>物资入库 </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>搜索条件</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content whj-padding">
+                        <form class="form-horizontal m-t" role="form">
+                            <div class="form-group">
+                                <ul class="ulist">
+                                    <li>
+                                        <span class="fl labeltext">物资品名：</span>
+                                        <div class="fl">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li>
+                                        <span class="fl labeltext">入库仓库：</span>
+                                        <div class="fl">
+                                            <input type="text" id="txtWareHouse" class="form-control" name="">
+                                        </div>
+                                        <button class="btn btn-primary btna " id="btna" type="button" onclick="SelectWarehouse()">&nbsp;选择</button>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li>
+                                        <span class="fl labeltext">入库日期：</span>
+                                        <input id="hello" class="laydate-icon form-control layer-date fl w-148">
+                                        <span class="fl communicate">―</span>
+                                        <input id="hello1" class="laydate-icon form-control layer-date fl w-148">
+                                        <div class="clear"></div>
+                                    </li>
+
+                                    <li>
+                                        <button class="btn btn-primary btnh" id="btnh" type="button"><i class="fa fa-search"></i>&nbsp;搜索</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    <!--ibox-content-->
+                </div>
+            </div>
+        </div>
+        <!--row-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <div class="btn-fl">
+                                    <button type="button" class="btn btn-outline  btn-primary" id="Add2">新建</button>
+                                    <button type="button" class="btn btn-outline  btn-success" id="Look">查看</button>
+                                    <button type="button" class="btn btn-outline  btn-warning" id="Edit">修改</button>
+                                    <button type="button" class="btn btn-outline  btn-danger" id="del">删除</button>
+                                </div>
+                                <table id="exampleTableEvents" data-mobile-responsive="true">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="state" data-checkbox="true"></th>
+                                            <th data-field="number">序号</th>
+                                            <th data-field="num">入库单号</th>
+                                            <th data-field="n">采购批次</th>
+                                            <th data-field="type">入库仓库</th>
+                                            <th data-field="size">入库人</th>
+                                            <th data-field="name">入库日期</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>1</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>2</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>3</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>4</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>5</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>6</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>7</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="checkss"></td>
+                                            <td>8</td>
+                                            <td>ZYHD201612161541</td>
+                                            <td>第一批</td>
+                                            <td>抗灾救助食品库</td>
+                                            <td>张萌萌</td>
+                                            <td>2016-12-16</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- End Example Events -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--row-->
+    </div>
+
+    <!-- 全局js -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- 自定义js -->
+    <script src="../js/content.js"></script>
+    <!-- Bootstrap table -->
+    <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- Peity -->
+    <script src="../js/demo/bootstrap-table-demo.js"></script>
+    <script src="../js/plugins/layer/laydate/laydate.js"></script>
+    <script src="../js/plugins/layer/layer.min.js"></script>
+    <script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- 个人js -->
+    <script src="../js/my.js"></script>
+    <script>
+        //外部js调用    
+        laydate({
+            elem: '#hello', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+            event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+        });
+        laydate({
+            elem: '#hello1', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+            event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+        });
+
+        $("input[name=btSelectAll]").on('click', function () {
+
+            if ($("input[name='btSelectAll']").is(':checked')) {
+
+                $("#exampleTableEvents").children('tbody').children('tr').each(function () {
+                    $(this).addClass("selected");
+                })
+            } else {
+
+                $("#exampleTableEvents").children('tbody').children('tr').each(function () {
+                    $(this).removeClass("selected");
+                })
+            }
+        });
+
+
+        $('#Add2').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '新建',
+                maxmin: true,
+                zIndex: 100,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '500px'],
+                content: 'add2.html',
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    swal({
+                        title: "添加成功",
+                        type: "success",
+                        zIndex: 101,
+                        confirmButtonText: "确定"
+                    },
+                    function () {
+                        layer.close(index);
+                    });
+                }
+            });
+        });
+        
+        $('#Look').on('click', function () {
+            var selectedCount = 0;
+            $("#exampleTableEvents").find('tr').each(function () {
+                if ($(this).hasClass('selected')) {
+                    selectedCount++
+                }
+            })
+            if (selectedCount > 1) {
+                alert("只能选择一条记录！");
+                return false;
+            }
+            else if (selectedCount < 1) {
+                alert("请选择一条记录！");
+                return false;
+            }
+            layer.open({
+                type: 2,
+                title: '查看',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '500px'],
+                content: 'InStockLook.html',
+                btn: ['取消']
+            });
+        });
+        $('#Edit').on('click', function () {
+            var selectedCount = 0;
+            $("#exampleTableEvents").find('tr').each(function () {
+                if ($(this).hasClass('selected')) {
+                    selectedCount++
+                }
+            })
+            if (selectedCount > 1) {
+                alert("只能选择一条记录！");
+                return false;
+            }
+            else if (selectedCount < 1) {
+                alert("请选择一条记录！");
+                return false;
+            }
+            layer.open({
+                type: 2,
+                title: '修改',
+                maxmin: true,
+                zIndex: 100,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '500px'],
+                content: 'InStockEdit.html',
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    swal({
+                        title: "修改成功",
+                        type: "success",
+                        zIndex: 101,
+                        confirmButtonText: "确定"
+                    },
+                    function () {
+                        layer.close(index);
+                    });
+                }
+            });
+        });
+        $('#del').click(function () {
+            var selectedCount = 0;
+            $("#exampleTableEvents").find('tr').each(function () {
+                if ($(this).hasClass('selected')) {
+                    selectedCount++
+                }
+            })
+            if (selectedCount == 0) {
+                alert("请选择一条记录！");
+                return false;
+            }
+            swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                cancelButtonText: "取消",
+                closeOnConfirm: false
+            }, function () {
+                swal({
+                    title: "删除成功",
+                    type: "success",
+                    text: "您已经永久删除了这条信息。",
+                    confirmButtonText: "确定"
+                },
+                  function () {
+
+                  });
+            });
+        });
+    </script>
+</body>
+</html>
