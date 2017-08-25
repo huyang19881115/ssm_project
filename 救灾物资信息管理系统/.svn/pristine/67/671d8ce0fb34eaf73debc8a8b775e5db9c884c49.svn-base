@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页</title>
+    <link href="../Css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+    <link href="../Css/animate.css" rel="stylesheet">
+    <link href="../Css/style.css" rel="stylesheet">
+    <link href="../Css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <form>
+        <div class="wrapper wrapper-content animated fadeInRight">
+          <!--  <div class="alert alert-success whj_location"><span class="c6">当前位置：自然灾害救助信息管理系统 &nbsp > &nbsp 物资管理 &nbsp > &nbsp</span>物资信息管理 </div>-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>搜索条件</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content whj-padding">
+                            <form class="form-horizontal m-t" role="form">
+                                <div class="form-group">
+                                    <ul class="ulist">
+                                        <li>
+                                            <span class="fl labeltext">物资编号：</span>
+                                            <div class="fl">
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li>
+                                            <span class="fl labeltext">物资名称：</span>
+                                            <div class="fl">
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li>
+                                            <span class="fl labeltext">物资类别：</span>
+                                            <div class="fl">
+                                                <input type="text" id="txt1" name="" class="form-control fl" style="width: 70%">
+                                                <button class="btn btn-primary btnh" id="btn1" type="button"><i class="fa fa-search"></i>&nbsp;选择</button>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-primary btnh" id="btnh" type="button"><i class="fa fa-search"></i>&nbsp;搜索</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!--ibox-content-->
+                    </div>
+                </div>
+            </div>
+            <!--row-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-fl">
+                                       <!-- <button type="button" class="btn btn-outline  btn-primary" id="Add">新建</button>
+                                        <button type="button" class="btn btn-outline  btn-success" id="Look">查看</button>
+                                        <button type="button" class="btn btn-outline  btn-warning" id="Edit">修改</button>
+                                        <button type="button" class="btn btn-outline  btn-danger" id="del">删除</button>-->
+                                    </div>
+                                    <table id="exampleTableEvents" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="number">序号</th>
+                                                <th data-field="num">物资编号</th>
+                                                <th data-field="name">物资名称</th>
+                                                <th data-field="type">物资类别</th>
+                                                <th data-field="size">规格型号</th>
+                                                <th data-field="shuliang">是否可回收</th>
+                                                <th data-field="danwei">单位</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>1</td>
+                                                <td>F001</td>
+                                                <td>蔬菜</td>
+                                                <td>食品其它类</td>
+                                                <td>200G*24</td>
+                                                <td>是</td>
+                                                <td>箱</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>2</td>
+                                                <td>F003</td>
+                                                <td>纯净水</td>
+                                                <td>食品其它类</td>
+                                                <td>200G*24</td>
+                                                <td>否</td>
+                                                <td>箱</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>3</td>
+                                                <td>F003</td>
+                                                <td>水果</td>
+                                                <td>食品其它类</td>
+                                                <td>200G*24</td>
+                                                <td>是</td>
+                                                <td>箱</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>4</td>
+                                                <td>F004</td>
+                                                <td>棉被</td>
+                                                <td>被服类</td>
+                                                <td>200G*24</td>
+                                                <td>是</td>
+                                                <td>件</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>5</td>
+                                                <td>F005</td>
+                                                <td>消防栓</td>
+                                                <td>装备类</td>
+                                                <td>001</td>
+                                                <td>是</td>
+                                                <td>个</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>6</td>
+                                                <td>F006</td>
+                                                <td>消防车</td>
+                                                <td>装备类</td>
+                                                <td>005</td>
+                                                <td>是</td>
+                                                <td>辆</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>7</td>
+                                                <td>F007</td>
+                                                <td>消防服</td>
+                                                <td>被服类</td>
+                                                <td>200G*24</td>
+                                                <td>是</td>
+                                                <td>双</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss"></td>
+                                                <td>8</td>
+                                                <td>F008</td>
+                                                <td>纯净水</td>
+                                                <td>食品其它类</td>
+                                                <td>200G*24</td>
+                                                <td>是</td>
+                                                <td>箱</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="checkss" /></td>
+                                                <td>9</td>
+                                                <td>F009</td>
+                                                <td>运动鞋</td>
+                                                <td>被服类</td>
+                                                <td>007</td>
+                                                <td>是</td>
+                                                <td>双</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- End Example Events -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--row-->
+        </div>
+
+        <!-- 全局js -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- 自定义js -->
+        <script src="../js/content.js"></script>
+        <!-- Bootstrap table -->
+        <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+        <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+        <!-- Peity -->
+        <script src="../js/demo/bootstrap-table-demo.js"></script>
+        <script src="../js/plugins/layer/laydate/laydate.js"></script>
+        <script src="../js/plugins/layer/layer.min.js"></script>
+        <script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+        <!-- 个人js -->
+        <script src="../js/my.js"></script>
+        <script>
+            //外部js调用    
+            $("input[name=btSelectAll]").on('click', function () {
+
+                if ($("input[name='btSelectAll']").is(':checked')) {
+
+                    $("#exampleTableEvents").children('tbody').children('tr').each(function () {
+                        $(this).addClass("selected");
+                    })
+                } else {
+
+                    $("#exampleTableEvents").children('tbody').children('tr').each(function () {
+                        $(this).removeClass("selected");
+                    })
+                }
+            });
+            function checked() {
+                var selectedCount = 0;
+                var result = "";
+                $("#exampleTableEvents").find('tr').each(function () {
+                    if ($(this).hasClass('selected')) {
+                        selectedCount++;
+                        if (selectedCount == 1) {
+                            result = $(this).children("td").eq(2).html();
+                        }
+                    }
+                })
+                if (selectedCount > 1) {
+                    alert("只能选择一条记录！");
+                    return false;
+                }
+                else if (selectedCount < 1) {
+                    alert("请选择一条记录！");
+                    return false;
+                } else {
+                    return result;
+                }
+            }
+            function CheckSelect() {
+                var selectedCount = 0;
+                var result = "";
+                $("#exampleTableEvents").find('tr').each(function () {
+                    if ($(this).hasClass('selected')) {
+                        selectedCount++;
+                        if (selectedCount == 1) {
+                            result = $(this).children("td").eq(3).html()+","+
+                                $(this).children("td").eq(5).html()+","+
+                                $(this).children("td").eq(4).html()+","+
+                                $(this).children("td").eq(7).html();
+                        }
+                    }
+                })
+                if (selectedCount > 1) {
+                    alert("只能选择一条记录！");
+                    return false;
+                }
+                else if (selectedCount < 1) {
+                    alert("请选择一条记录！");
+                    return false;
+                } else {
+                    return result;
+                }
+            }
+            $('#btn1').on('click', function () {
+               parent.layer.open({
+                    type: 2,
+                    title: '选择物资类别',
+                    maxmin: true,
+                    zIndex: 1000,
+                    shadeClose: true, //点击遮罩关闭层
+                    area: ['800px', '520px'],
+                    content: '../MaterialManagement/MaterialInfoManagement/SelectMaterialCategory.html',
+                    btn: ['确定', '取消'],
+                    yes: function (index, layero) {
+                        var child = $(layero).find("iframe")[0].contentWindow.checked()
+                       
+                        if (child != false) {
+                            $("#txt1").val(child);
+                            parent.layer.close(index);
+                        }
+                    }
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>

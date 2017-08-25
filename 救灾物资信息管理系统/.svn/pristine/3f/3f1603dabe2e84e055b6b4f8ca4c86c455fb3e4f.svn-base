@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页改版</title>
+    <link href="../../Css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+    <link href="../../Css/animate.css" rel="stylesheet">
+    <link href="../../Css/style.css" rel="stylesheet">
+    <link href="../../Css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style type="text/css">
+        .table {
+            border: solid 1px #ddd;
+        }
+
+            .table td {
+                border: solid 1px #ddd;
+            }
+
+            .table th {
+                border: solid 1px #ddd;
+            }
+    </style>
+</head>
+<body class="gray-bg">
+    <form>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="alert alert-success whj_location"><span class="c6">当前位置：救灾物资信息管理系统 &nbsp > &nbsp 统计报表 &nbsp > &nbsp</span>  救灾物资报废情况统计</div>
+            <!--row-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>搜索条件</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content whj-padding">
+                            <div class="form-group">
+                                <ul class="ulist">
+                                    <li>
+                                        <span class="fl labeltext">报废时间：</span>
+                                        <input id="hello" class="laydate-icon form-control layer-date fl w-148">
+                                        <span class="fl communicate">―</span>
+                                        <input id="hello1" class="laydate-icon form-control layer-date fl w-148">
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-primary btnh" id="btnh" type="button"><i class="fa fa-search"></i>&nbsp;搜索</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--ibox-content-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div>
+                                        <button type="button" class="btn btn-outline btn-import" id="Lead">导出</button>
+                                    </div>
+                                    <div style="text-align: center; font-size: 24px;margin-bottom:40px">新疆维吾尔自治区救灾物资报废情况统计表</div>
+                                    <table id="exampleTableEvents" data-mobile-responsive="true" class="table table-border">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="pinming" data-sort-stable="true" class="txa br">物资品名</th>
+                                                <th data-field="shuliang" class="auto-style1 txa">所属库房</th>
+                                                <th data-field="shuliang" class="txa">报废数量</th>
+                                                <th data-field="heji" class="txa">合计</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="3">12平方米棉帐篷（顶）</td>
+                                                <td>乌鲁木齐库</td>
+                                                <td>400</td>
+                                                <td rowspan="3">1020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>客什分库</td>
+                                                <td>300</td>
+                                            </tr>
+                                            <tr>
+                                                <td>天山区分库</td>
+                                                <td>320</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3">折叠床（张）</td>
+                                                <td>乌鲁木齐库</td>
+                                                <td>500</td>
+                                                <td rowspan="3">1200</td>
+                                            </tr>
+                                            <tr>
+                                                <td>客什分库</td>
+                                                <td>400</td>
+                                            </tr>
+                                            <tr>
+                                                <td>天山区分库</td>
+                                                <td>300</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3">应急灯（个）</td>
+                                                <td>乌鲁木齐库</td>
+                                                <td>800</td>
+                                                <td rowspan="3">1800</td>
+                                            </tr>
+                                            <tr>
+                                                <td>客什分库</td>
+                                                <td>600</td>
+                                            </tr>
+                                            <tr>
+                                                <td>天山区分库</td>
+                                                <td>400</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3">远光手电筒（个）</td>
+                                                <td>乌鲁木齐库</td>
+                                                <td>500</td>
+                                                <td rowspan="3">1400</td>
+                                            </tr>
+                                            <tr>
+                                                <td>客什分库</td>
+                                                <td>500</td>
+                                            </tr>
+                                            <tr>
+                                                <td>天山区分库</td>
+                                                <td>400</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- End Example Events -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--row-->
+        </div>
+
+        <!-- 全局js -->
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!-- 自定义js -->
+        <script src="../../js/content.js"></script>
+        <!-- Bootstrap table -->
+        <!--        <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+        <script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>-->
+
+        <!-- Peity -->
+        <script src="../../js/demo/bootstrap-table-demo.js"></script>
+        <script src="../../js/plugins/layer/laydate/laydate.js"></script>
+        <script src="../../js/plugins/layer/layer.min.js"></script>
+        <script src="../../js/plugins/sweetalert/sweetalert.min.js"></script>
+        <!-- 个人js -->
+        <script src="../../js/my.js"></script>
+                 <script>
+                     //外部js调用
+                     laydate({
+                         elem: '#hello', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+                         event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+                     });
+                     laydate({
+                         elem: '#hello1', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+                         event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+                     });
+             </script>
+    </form>
+</body>
+</html>

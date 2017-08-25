@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页改版</title>
+    <link href="../../Css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Css/plugins/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+    <link href="../../Css/animate.css" rel="stylesheet">
+    <link href="../../Css/style.css" rel="stylesheet">
+    <link href="../../Css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style type="text/css">
+        .auto-style1 {
+        }
+
+        .txa {
+            text-align: center;
+        }
+
+        .br {
+            border-right: solid 1px #ddd;
+        }
+         .table {
+            border: solid 1px #ddd;
+        }
+
+            .table td {
+                border: solid 1px #ddd;
+            }
+
+            .table th {
+                border: solid 1px #ddd;
+            }
+    </style>
+</head>
+<body class="gray-bg">
+    <form>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="alert alert-success whj_location"><span class="c6">当前位置：自治区救灾物资信息管理系统 &nbsp > &nbsp 统计报表 &nbsp > &nbsp</span>  物资统计</div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>搜索条件</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content whj-padding">
+                            <div class="form-group">
+                                <ul class="ulist">
+                                    <li>
+                                        <span class="fl labeltext">物资品名：</span>
+                                        <div class="fl">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </li>
+
+                                    <li>
+                                        <button class="btn btn-primary btnh" id="btnh" type="button"><i class="fa fa-search"></i>&nbsp;搜索</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--ibox-content-->
+                    </div>
+                </div>
+            </div>
+            <!--row-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div>
+                                        <button type="button" class="btn btn-outline btn-import" id="Lead">导出</button>
+                                    </div>
+                                    <div style="text-align: center; font-size: 24px;margin-bottom:40px">新疆维吾尔自治区救灾物资统计表</div>
+                                    <table id="exampleTableEvents" data-mobile-responsive="true" class="table table-border">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="id" data-sort-stable="true" class="auto-style1 txa" rowspan="2">序号</th>
+                                                <th data-field="pinming" data-sort-stable="true" class="auto-style1 txa br" rowspan="2">物资品名</th>
+                                                <th data-field="shuliang" class="auto-style1 txa" colspan="2">数量</th>
+                                                <th data-field="heji" class="auto-style1 txa" rowspan="2">合计</th>
+                                            </tr>
+                                            <tr>
+                                                <th data-field="wulumuqi" class="auto-style1 txa">乌鲁木齐库</th>
+                                                <th data-field="keshifenku" class="auto-style1 txa">客什分库</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>12平方米棉帐篷（顶）</td>
+                                                <td>1200</td>
+                                                <td>1000</td>
+                                                <td>2200</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>棉大衣（件）</td>
+                                                <td>2200</td>
+                                                <td>1200</td>
+                                                <td>3400</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>棉被（条）</td>
+                                                <td>2400</td>
+                                                <td>1200</td>
+                                                <td>3600</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>毯子（条）</td>
+                                                <td>1000</td>
+                                                <td>1000</td>
+                                                <td>2000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>睡袋（条）</td>
+                                                <td>5000</td>
+                                                <td>4800</td>
+                                                <td>9800</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>棉褥（床）</td>
+                                                <td>1500</td>
+                                                <td>1500</td>
+                                                <td>3000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>防潮垫（床）</td>
+                                                <td>1400</td>
+                                                <td>1400</td>
+                                                <td>2800</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>折叠床（张）</td>
+                                                <td>1000</td>
+                                                <td>1000</td>
+                                                <td>2000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>应急灯（个）</td>
+                                                <td>800</td>
+                                                <td>600</td>
+                                                <td>1400</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>远光手电筒（个）</td>
+                                                <td>500</td>
+                                                <td>400</td>
+                                                <td>900</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- End Example Events -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--row-->
+        </div>
+
+        <!-- 全局js -->
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!-- 自定义js -->
+        <script src="../../js/content.js"></script>
+        <!-- Bootstrap table -->
+<!--        <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+        <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>-->
+
+        <!-- Peity -->
+        <script src="../../js/demo/bootstrap-table-demo.js"></script>
+        <script src="../../js/plugins/layer/laydate/laydate.js"></script>
+        <script src="../../js/plugins/layer/layer.min.js"></script>
+        <script src="../../js/plugins/sweetalert/sweetalert.min.js"></script>
+        <!-- 个人js -->
+        <script src="../../js/my.js"></script>
+        <script>
+            ////导出
+            $('#Lead').on('click', function () {
+                alert("导出成功！");
+            });
+
+        </script>
+    </form>
+</body>
+</html>
